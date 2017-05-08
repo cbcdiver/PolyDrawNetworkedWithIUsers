@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sS0-0K-XGg">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PolyDrawNetworked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Hr-T8-hg0">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" id="3L0-Tl-fyc">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="rA5-Hl-Fjz">
+                                            <rect key="frame" x="16" y="7" width="121" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Rect"/>
+                                                <segment title="Oval"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="shapeChosen:" destination="BYZ-38-t0r" eventType="valueChanged" id="3gj-7N-dUs"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cs-Ng-KxA" customClass="DrawingView" customModule="PolyDrawNetworked" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Cs-Ng-KxA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="2kn-HK-1SW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Cs-Ng-KxA" secondAttribute="bottom" constant="44" id="Bfo-s3-Wed"/>
+                            <constraint firstItem="2Cs-Ng-KxA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="UYu-A3-Vzx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Cs-Ng-KxA" secondAttribute="trailing" constant="-16" id="YTj-0d-7aD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KkQ-aP-yeq"/>
+                    <connections>
+                        <outlet property="drawingView" destination="2Cs-Ng-KxA" id="bVu-bv-DUL"/>
+                        <segue destination="97O-2C-8DP" kind="presentation" identifier="wait" id="a6O-H3-Wbw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="35.532233883058474"/>
+        </scene>
+        <!--Waiting View Controller-->
+        <scene sceneID="zJD-Qb-ZIn">
+            <objects>
+                <viewController id="97O-2C-8DP" customClass="WaitingViewController" customModule="PolyDrawNetworked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VqR-Hg-GJE"/>
+                        <viewControllerLayoutGuide type="bottom" id="9l2-Sw-UPI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aPi-9H-pbO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJe-P2-ygC">
+                                <rect key="frame" x="16" y="263" width="288" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uJe-P2-ygC" firstAttribute="trailing" secondItem="aPi-9H-pbO" secondAttribute="trailingMargin" id="4Z6-pn-HAH"/>
+                            <constraint firstItem="uJe-P2-ygC" firstAttribute="top" secondItem="VqR-Hg-GJE" secondAttribute="bottom" constant="243" id="OWv-j6-1zk"/>
+                            <constraint firstItem="uJe-P2-ygC" firstAttribute="leading" secondItem="aPi-9H-pbO" secondAttribute="leadingMargin" id="o2H-oG-ls9"/>
+                            <constraint firstItem="9l2-Sw-UPI" firstAttribute="top" secondItem="uJe-P2-ygC" secondAttribute="bottom" constant="262" id="vNs-xW-bbI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rsS-Di-6hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741.5999999999999" y="35.532233883058474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DO8-rC-IXz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sS0-0K-XGg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="riP-zA-vdW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uij-9E-w7b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TeX-ad-en1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+        </scene>
+    </scenes>
+</document>

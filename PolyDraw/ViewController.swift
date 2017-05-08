@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         ref?.child("Users").childByAutoId().setValue("A User")
         self.ref?.child("Users").observeSingleEvent(of: .value, with: { (snapShot) in
             if snapShot.childrenCount == 1 {
-               self.performSegue(withIdentifier: "wait", sender: self)
+               self.performSegue(withIdentifier: "WaitingSegue", sender: self)
             }
         })
 

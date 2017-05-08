@@ -57,7 +57,7 @@
                     <navigationItem key="navigationItem" id="KkQ-aP-yeq"/>
                     <connections>
                         <outlet property="drawingView" destination="2Cs-Ng-KxA" id="bVu-bv-DUL"/>
-                        <segue destination="97O-2C-8DP" kind="presentation" identifier="wait" id="a6O-H3-Wbw"/>
+                        <segue destination="97O-2C-8DP" kind="presentation" identifier="WaitingSegue" id="a6O-H3-Wbw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,13 +82,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-QR-UzU">
+                                <rect key="frame" x="150" y="314" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uJe-P2-ygC" firstAttribute="trailing" secondItem="aPi-9H-pbO" secondAttribute="trailingMargin" id="4Z6-pn-HAH"/>
+                            <constraint firstAttribute="trailing" secondItem="bRc-QR-UzU" secondAttribute="trailing" constant="150" id="OJp-3Y-4zz"/>
                             <constraint firstItem="uJe-P2-ygC" firstAttribute="top" secondItem="VqR-Hg-GJE" secondAttribute="bottom" constant="243" id="OWv-j6-1zk"/>
+                            <constraint firstItem="bRc-QR-UzU" firstAttribute="top" secondItem="uJe-P2-ygC" secondAttribute="bottom" constant="8" id="czK-n1-0jV"/>
                             <constraint firstItem="uJe-P2-ygC" firstAttribute="leading" secondItem="aPi-9H-pbO" secondAttribute="leadingMargin" id="o2H-oG-ls9"/>
                             <constraint firstItem="9l2-Sw-UPI" firstAttribute="top" secondItem="uJe-P2-ygC" secondAttribute="bottom" constant="262" id="vNs-xW-bbI"/>
+                            <constraint firstItem="9l2-Sw-UPI" firstAttribute="top" secondItem="bRc-QR-UzU" secondAttribute="bottom" constant="234" id="xXG-Fk-56E"/>
+                            <constraint firstItem="bRc-QR-UzU" firstAttribute="leading" secondItem="aPi-9H-pbO" secondAttribute="leading" constant="150" id="zNc-9h-qUM"/>
                         </constraints>
                     </view>
                 </viewController>

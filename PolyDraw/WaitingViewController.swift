@@ -19,13 +19,18 @@ class WaitingViewController: UIViewController {
         self.ref = FIRDatabase.database().reference()
         
         self.ref?.child("Users").observe(.value, with: { (snapShot) in
-            if snapShot.childrenCount == 2 {
+            if snapShot.childrenCount == 2 {    
                 self.dismiss(animated: true, completion: nil)
             }
         })
 
     }
     
+    func showAlert(errorMessage:String, title:String = "Message") {
+        let alert = UIAlertController(title: title, message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

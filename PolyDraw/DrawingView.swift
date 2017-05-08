@@ -53,7 +53,10 @@ class DrawingView: UIView {
                                        theWidth:20)
         }
         
-        ref?.child("Shapes").childByAutoId().setValue(shape?.toDictionary())
+        let theChildRef = ref?.child("Shapes").childByAutoId()
+        print(theChildRef.debugDescription)
+        theChildRef!.childByAutoId().setValue(shape?.toDictionary())
+
         self.theShapes.append(shape!)
         
         self.setNeedsDisplay()
